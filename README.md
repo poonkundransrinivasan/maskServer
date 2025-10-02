@@ -1,4 +1,4 @@
-# maskServer
+# COVID-19 Protocol Monitoring System
 
 A collection of utilities and demos for mask detection and social-distance monitoring.
 
@@ -35,13 +35,12 @@ Impact: An active surveillance system that combines mask detection, temperature 
 
 This project follows the design, experiments, and evaluations described in the original study and adapts those ideas into the code and demos contained in this repository.
 
-## Repository layout (high level)
-
+## Repository layout
 - `Mask Detection Module/`
   - `Server and UI/Server and UI/`
     - `ServerPyCharm.py` — main socket server and mask-checking logic (entrypoint for mask detection socket service).
     - `frontEnd.py` — Flask app to show entries from `maskDB2.db` using templates in `templates/` and images in `static/`.
-    - `maskDB.db`, `maskDB1.db`, `maskDB2.db` — SQLite databases used by the front-end / server.
+    - `maskDB.db` — SQLite databases used by the front-end / server.
     - `MaskDetectionModel/` — trained Keras model directory (expected by `ServerPyCharm.py`).
     - `static/` and `templates/` — web assets and Flask templates used by `frontEnd.py`.
   - `Training and testing/` — Jupyter notebooks used for training/testing the model, example `mask_detector.model` and dataset folder `maskdata/`.
@@ -178,10 +177,6 @@ Small improvements that are helpful:
 - Replace absolute paths with relative, configurable settings (config file or environment variables).
 - Add a single `requirements.txt` at the repository root.
 - Add a small example client that connects to the mask detection socket and sends frames (for local testing).
-
-## License
-
-This repository does not include an explicit license file. Add `LICENSE` to the repo if you want to make the terms explicit. For academic/demo projects, consider MIT or Apache-2.0.
 
 ## Contact / Notes
 
