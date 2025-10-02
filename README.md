@@ -1,4 +1,4 @@
-# COVID-19 Protocol Monitoring System
+# COVID-19 Protocol Monitoring System (2020 - 21)
 
 A collection of utilities and demos for mask detection and social-distance monitoring.
 
