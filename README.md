@@ -21,13 +21,19 @@ This repository contains two main modules:
 
 ## About
 
-The project was built as part of a computer vision (BE/Capstone) effort to demonstrate:
+Improvised Surveillance System: Mask Detection, Social Distance Monitoring and Temperature Sensing — summary adapted from Srinivasan Poonkundran et al., Dept. of Computer Engineering, AISSMS College of Engineering, Pune, India.
 
-- Real-time mask detection using a Keras/TensorFlow model and OpenCV face detector.
-- Recording detections (timestamp, address/IP, temperature, reason, saved frame) to SQLite and visualizing via a Flask UI.
-- Social distancing detection in video using YOLOv3 and simple centroid-distance checking.
+Abstract: The global COVID-19 pandemic has had a severe worldwide impact. To help limit transmission, our system monitors multiple safety protocols simultaneously: face-mask usage, social distancing, and body temperature. The solution combines image processing and AI for mask detection and social distance monitoring with IoT sensing for temperature measurements. The implementation uses socket programming to connect distributed client nodes (Raspberry Pi Pico / Arduino Uno backed devices and CCTV cameras) to a central server that performs model inference and stores results.
 
-This README documents how the repository is organized, how to configure and run each module, and common issues.
+Motivation and goals: Wearing masks, sanitizing hands, and keeping physical distance are key defenses against COVID-19. This project aims to automate inspection of those protocols to reduce manual effort and improve public safety in places such as entrances, shopping malls, and other public gatherings. The system is designed to detect people not wearing masks, flag social-distance violations, read an individual's temperature (via IR sensors), and record violations to a central database for review and action.
+
+System overview: Clients (edge nodes) consist of small microcontroller-based units or camera feeds with motion and IR temperature sensors. When a person is detected, the client captures a frame and metadata (temperature, node/address) and sends it to a central server using socket communication. The server runs the mask-detection CNN (MobileNetV2-based) and a person-detection/social-distance module (YOLO-based). Violations (no-mask, high temperature, close proximity) are stored in an SQLite database and can be viewed through a Flask-based front-end.
+
+Hardware & software: The prototype design uses Raspberry Pi Pico or Arduino Uno for sensor interfacing and communication, CCTV cameras for image capture, IR temperature sensors, motion sensors, and a relay-driven sanitizer dispenser. The server side uses Python, OpenCV, TensorFlow/Keras, and Flask. Socket programming lets many distributed clients report to a single model server; this reduces per-node compute requirements and centralizes data storage and frontend access.
+
+Impact: An active surveillance system that combines mask detection, temperature sensing and social-distance monitoring can help slow disease spread by automatically detecting and logging violations, reducing the need for manual inspection, and enabling rapid response by administrators.
+
+This project follows the design, experiments, and evaluations described in the original study and adapts those ideas into the code and demos contained in this repository.
 
 ## Repository layout (high level)
 
