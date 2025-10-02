@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xyz | Monitoring System</title>
+    <style>
+
+        body{
+               background-color:white;
+        }
+        #navbar {
+            display: flex;
+            position: relative;
+            background-color: #006233;
+            border-radius: 52px;
+        }
+
+        #navbar ul {
+            display: flex;
+            padding-left: 0px;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            margin: 10px;
+        }
+
+        #navbar ul li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 18px;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+        #logo {
+            margin: 3px 10px;
+        }
+
+        #logo img {
+            border-radius: 29px;
+            margin: 11px 6px;
+        }
+
+        #table {
+            border: black 2px solid;
+            padding: 10px;
+            text-align: left;
+            margin-left: auto;
+            /*to center the table margin left and right is set to auto*/
+            margin-right: auto;
+        }
+
+        p {
+            border: black 2px dotted;
+        }
+
+        .table_header {
+            background-color: #006233;
+        }
+
+        .table_row {
+            padding: 8px;
+            background-color: white;
+        }
+
+        .table_cell{
+            padding: 8px;
+            margin-left: auto;
+            margin-right: auto;
+        } 
+
+        #img{
+            border: black 1px solid;
+        }
+
+        #img:hover{
+                border-radius: 2px;
+                transform: scale(5);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="static\logo2.png" alt="">
+        </div>
+
+        <div>
+            <ul>
+                <li><a href="#" onclick="window.location.reload(true);">Home</a></li>
+                <li><a href="/AboutUs">About Us</a></li>
+                <li><a href="/ContactUs">Contac Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <table id="table">
+        <tr class="table_header">
+            {% for header in Headings %}
+
+            <th class="table_cell">{{header}}</th>
+
+            {% endfor %}
+        </tr>
+
+        <p></p>
+
+        {% for row in Data %}
+        <tr class="table_row">
+            {% for cell in row %}
+
+            {% if images in cell%}
+            <td class="table_cell">
+                <a href="/information" target="_blank">
+                    <img id="img" src="static\{{cell}}" height="50px" width="50px">
+                </a>
+            </td>
+
+            {% else %}
+            <td class="table_cell" id="bold">{{cell}}</td>
+
+            {% endif %}
+
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+</body>
+
+</html>

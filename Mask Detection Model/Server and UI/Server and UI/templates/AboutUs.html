@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xyz | About Us</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        #navbar {
+            display: flex;
+            position: relative;
+            background-color: #006233;
+            border-radius: 52px;
+        }
+
+        #navbar ul {
+            display: flex;
+            padding-left: 0px;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            margin: 10px;
+        }
+
+        #navbar ul li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 18px;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        #logo {
+            margin: 3px 10px;
+        }
+
+        #logo img {
+            border-radius: 29px;
+            margin: 11px 6px;
+        }
+
+        p {
+            border: black 2px dotted;
+        }
+
+        /*#who{
+            display: flex;
+            border: black 2px solid;
+        }
+        #what{
+
+            display: flex;
+            border: black 2px solid;
+        }*/
+
+        h1 {
+            text-align: center;
+        }
+
+        .Aboutus {
+            border: #006233 4px solid;
+            margin: 5px;
+            padding: 10px;
+            text-align: left;
+            border-radius: 20px;
+        }
+
+        .blah {
+            display: flex;
+        }
+
+        #logowhy {
+            height: 100px;
+            width: 164px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="static\logo2.png" alt="">
+        </div>
+
+        <div>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#" onclick="window.location.reload(true);" >About Us</a></li>
+                <li><a href="/ContactUs">Contac Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <p></p>
+
+    <div class="blah">
+        
+        
+       
+    </div>
+
+    <div class="blah">
+        <section id="who" class="Aboutus">
+            <img src="static\logo3.png" id="logowhy">
+            <h1>Who We Are?</h1>
+            A group of final year students studying in AISSMS, COLLEGE OF ENGINEERING and developed this model as our
+            final year project.
+        </section>
+
+        <section id="what" class="Aboutus">
+            <img src="static\logo4.png" id="logowhy">
+            <h1>What We Do?</h1>
+            This system will make sure that people follow the rules and regulations imposed by the government such as
+            social distancing and wearing a mask at all times. The system also checks that the person entering does not
+            have high temperature and will dispence sanitiser.
+        </section>
+
+        <section id="why" class="Aboutus">
+            <img src="static\logo51.png" id="logowhy">
+            <h1>Why This Project ?</h1>
+            We created this system to provide some contribution and help to reduce the spread of corona virus so that people can back to
+            their normal life with little to no risk of getting infected. 
+        </section>
+    </div>
+</body>
+
+</html>
