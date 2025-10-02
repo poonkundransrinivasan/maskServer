@@ -172,10 +172,6 @@ Small improvements that are helpful:
 - Add a single `requirements.txt` at the repository root.
 - Add a small example client that connects to the mask detection socket and sends frames (for local testing).
 
-## License
-
-This repository does not include an explicit license file. Add `LICENSE` to the repo if you want to make the terms explicit. For academic/demo projects, consider MIT or Apache-2.0.
-
 ## Contact / Notes
 
 If you want help getting either module running, share the error output and I can help update paths or create helper scripts (for example: a small test client that sends frames to `ServerPyCharm.py` and a consolidated `requirements.txt`).
